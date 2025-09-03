@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/clane83/cse-341-project1#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "bson": "^6.10.4",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "mongodb": "^6.19.0"
   }
 }
