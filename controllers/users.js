@@ -30,7 +30,7 @@ const createUser = async (req, res) => {
         ipaddress: req.body.ipaddress
     }
     const response = await mongodb.getDatabase().db().collection('users').insertOne(user);
-    if (response.modifiedCount > 0) {
+    if (response.acknowledged) {
         res.status(204).end();
     } else {
         res.status(500).json(response.error || 'Some error occurred while updating the user.');
@@ -47,7 +47,7 @@ const updateUser = async (req, res) => {
         ipaddress: req.body.ipaddress
     }
     const response = await mongodb.getDatabase().db().collection('users').replaceOne({ _id: userId }, user);
-    if (response.acknowledged) {
+    if (response.modifiedCount > 0) {
         res.status(204).end();
     } else {
         res.status(500).json(response.error || 'Some error occurred while updating the user.');
