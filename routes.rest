@@ -1,0 +1,33 @@
+//LOCALHOST TESTING
+###GET ALL USERS
+GET http://localhost:3000/users
+
+
+###GET SINGLE USER
+GET http://localhost:3000/users/68b7aacb2199668f52cdd110
+
+
+###CREATE USER
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "email": "fakeemail@fake.com",
+  "username": "fakeuser",
+  "name": "Fake Name",
+  "ipaddress": "94.34.12.12"
+}
+
+###UPDATE USER
+PUT http://localhost:3000/users/68b7ab802199668f52cdd111
+Content-Type: application/json
+
+{
+    "email": "fake@test.com",
+    "username": "facke@test.com",
+    "name": "Fake Name",
+    "ipaddress": "94.345.234.12"
+}
+
+###DELETE USER
+DELETE http://localhost:3000/users/68c0b64b0fce84d09c1d5bbe
